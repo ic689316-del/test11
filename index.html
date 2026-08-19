@@ -214,7 +214,15 @@
         <select id="history-filter-person" class="history-filter">
           <option value="all">전체 보기</option>
         </select>
+        <button type="button" id="history-delete-selected-button" class="history-delete-button" disabled>🗑️ 선택 삭제</button>
         <button type="button" id="history-export-button" class="history-export-button">📥 Excel로 내보내기</button>
+      </div>
+
+      <div class="history-select-all-wrap" id="history-select-all-wrap" hidden>
+        <label class="history-select-all">
+          <input type="checkbox" id="history-select-all-checkbox">
+          전체 선택
+        </label>
       </div>
 
       <ul class="history-list" id="history-list">

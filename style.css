@@ -709,8 +709,30 @@ button {
   color: var(--text-primary);
 }
 
-.history-export-button {
+.history-delete-button {
   margin-left: auto;
+  background-color: var(--color-error);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px var(--space-lg);
+  min-height: 44px;
+  transition: opacity 0.15s ease;
+}
+
+.history-delete-button:hover {
+  opacity: 0.85;
+}
+
+.history-delete-button:disabled {
+  background-color: var(--surface-fill);
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+.history-export-button {
   background-color: var(--color-success);
   color: #ffffff;
   font-weight: 600;
@@ -724,6 +746,25 @@ button {
 
 .history-export-button:hover {
   opacity: 0.85;
+}
+
+.history-select-all-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto var(--space-md);
+}
+
+.history-select-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.history-select-all input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
 }
 
 .history-list {
@@ -746,6 +787,21 @@ button {
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
+  display: flex;
+  gap: var(--space-md);
+}
+
+.history-item__select {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-error);
+}
+
+.history-item__body {
+  flex: 1;
+  min-width: 0;
 }
 
 .history-item__header {
@@ -858,7 +914,7 @@ button {
     align-items: stretch;
   }
 
-  .history-export-button {
+  .history-delete-button {
     margin-left: 0;
   }
 }

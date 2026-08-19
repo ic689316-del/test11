@@ -30,7 +30,7 @@
   const INTENT_RULES = [
     {
       tone: 'distancing',
-      keywords: ['다음에', '나중에', '바쁘', '됐어', '괜찮아 안 해도', '아니야 괜찮'],
+      keywords: ['다음에', '나중에', '바쁘', '됐어', '괜찮아 안 해도', '아니야 괜찮', '신경쓰지마', '어쩔 수 없지', '그냥 넘어가자', '알겠어 그럼'],
       intent: '갈등 없이 완곡하게 거리를 두거나 거절하려는 것',
       purpose: '직접 거절해서 관계가 어색해지는 상황을 피하려는 것',
       emotion: '무심함 속에 약간의 부담·서운함',
@@ -47,7 +47,7 @@
     },
     {
       tone: 'soft-request',
-      keywords: ['혹시', '괜찮으면', '시간 되면', '가능하면', '부탁'],
+      keywords: ['혹시', '괜찮으면', '시간 되면', '가능하면', '부탁', '해줄 수 있어', '해줄래', '어렵겠지만', '미안한데', '실례가 안된다면'],
       intent: '거절당할 부담 없이 조심스럽게 요청하거나 제안하려는 것',
       purpose: '직접적으로 요구하기보다 상대가 편하게 응할 여지를 남기려는 것',
       emotion: '기대감과 조심스러움이 섞인 상태',
@@ -64,7 +64,7 @@
     },
     {
       tone: 'probe',
-      keywords: ['요즘 어때', '잘 지내', '별일 없', '어떻게 지내', '분위기 어때'],
+      keywords: ['요즘 어때', '잘 지내', '별일 없', '어떻게 지내', '분위기 어때', '무슨 일 있어', '표정이 왜', '힘들어 보여', '기분 안좋아 보여'],
       intent: '가볍게 안부를 묻는 척하며 실제로는 상태나 분위기를 살피려는 것',
       purpose: '민감한 주제를 직접 묻기 전에 상대의 반응이나 근황을 먼저 탐색하려는 것',
       emotion: '궁금함과 약간의 경계심',
@@ -81,7 +81,7 @@
     },
     {
       tone: 'evaluate',
-      keywords: ['확인', '체크', '보고', '왜', '진행 상황', '언제까지'],
+      keywords: ['확인', '체크', '보고', '왜', '진행 상황', '언제까지', '누가 담당', '책임', '근거', '데이터로'],
       intent: '책임 소재를 확인하거나 진행 상황을 평가하려는 것',
       purpose: '업무나 상황에 대한 통제권을 확보하고 리스크를 미리 점검하려는 것',
       emotion: '긴장감과 압박감',
@@ -98,7 +98,7 @@
     },
     {
       tone: 'repair',
-      keywords: ['미안', '죄송', '내 잘못', '오해', '화해'],
+      keywords: ['미안', '죄송', '내 잘못', '오해', '화해', '용서', '다시 잘 지내자', '내가 미안해'],
       intent: '갈등을 빨리 진정시키고 관계를 회복하려는 것',
       purpose: '긴장된 관계를 완화하고 다시 좋은 분위기로 되돌리려는 것',
       emotion: '미안함과 조심스러움',
@@ -115,7 +115,7 @@
     },
     {
       tone: 'affection',
-      keywords: ['보고싶', '연락해', '같이 가자', '데이트', '좋아해'],
+      keywords: ['보고싶', '연락해', '같이 가자', '데이트', '좋아해', '설레', '두근', '자니', '오늘 뭐해', '심쿵'],
       intent: '호감이나 친밀감을 은근히 드러내며 반응을 살피려는 것',
       purpose: '직접 고백하기 전에 상대의 관심 정도를 확인하려는 것',
       emotion: '설렘과 동시에 거절에 대한 불안',
@@ -153,7 +153,7 @@
   const ASK_RULES = [
     {
       tone: 'refuse',
-      keywords: ['싫어', '가기 싫', '안 하고 싶', '못 하겠어', '하기 싫', '별로'],
+      keywords: ['싫어', '가기 싫', '안 하고 싶', '못 하겠어', '하기 싫', '별로', '못가', '안 갈래', '패스할래', '빠질래', '내키지 않아'],
       suggestions: [
         '그날 컨디션이 좀 안 좋을 것 같아서, 이번엔 참석이 어려울 것 같아요.',
         '다른 일정이 겹칠 것 같은데, 다음 기회에 함께해도 될까요?',
@@ -162,7 +162,7 @@
     },
     {
       tone: 'request',
-      keywords: ['해줘', '부탁', '도와줘', '필요해', '도움'],
+      keywords: ['해줘', '부탁', '도와줘', '필요해', '도움', '해주라', '해주면 안돼', '가능할까', '좀 봐줘'],
       suggestions: [
         '혹시 시간 괜찮으시면 이 부분 한번 봐주실 수 있을까요?',
         '바쁘시면 나중에 여유 되실 때 알려주셔도 괜찮아요.',
@@ -171,16 +171,16 @@
     },
     {
       tone: 'complaint',
-      keywords: ['서운', '섭섭', '화나', '짜증', '불만'],
+      keywords: ['서운', '섭섭', '화나', '짜증', '불만', '실망', '속상해', '너무해', '왜 그래'],
       suggestions: [
-        '그때 좀 아쉬웠던 것 같아요, 다음엔 이렇게 해주시면 좋을 것 같아요.',
+        '그때 좀 아쉬웠던 것 같아요, 다음엔 조금만 더 신경 써주시면 좋을 것 같아요.',
         '혹시 그렇게 하신 데는 이유가 있으셨을까요?',
-        '별건 아닌데, 그 부분은 조금만 더 신경 써주시면 좋겠어요.'
+        '별건 아닌데, 그 부분은 저한테 먼저 얘기해주시면 더 좋을 것 같아요.'
       ]
     },
     {
       tone: 'affection',
-      keywords: ['좋아해', '만나고 싶', '데이트', '보고 싶'],
+      keywords: ['좋아해', '만나고 싶', '데이트', '보고 싶', '설레', '자니', '연락 좀', '만나자'],
       suggestions: [
         '요즘 자주 생각나네, 우리 언제 한번 시간 맞춰서 볼까?',
         '혹시 다음에 같이 밥 한번 먹지 않을래?',
@@ -189,7 +189,7 @@
     },
     {
       tone: 'question',
-      keywords: ['왜 그랬', '진짜야', '맞아?', '사실이야'],
+      keywords: ['왜 그랬', '진짜야', '맞아?', '사실이야', '진심이야', '정말이야', '진짜냐'],
       suggestions: [
         '혹시 무슨 일 있었어? 편하게 얘기해줘도 돼.',
         '그때 어떤 상황이었는지 궁금해서 물어보는 거야.',
@@ -201,9 +201,9 @@
   const ASK_DEFAULT_RULE = {
     tone: 'default',
     suggestions: [
-      '문장 앞에 "혹시"나 "괜찮으시면"을 붙이면 훨씬 부드러워져요.',
-      '"~것 같아요"처럼 단정짓지 않는 말투로 바꿔보면 어때요?',
-      '이유를 짧게 한마디 덧붙이면 오해 없이 부드럽게 전달할 수 있어요.'
+      '음... 이게 좀 조심스러운 얘기이긴 한데, 편하게 들어주시면 좋겠어요.',
+      '혹시 이렇게 말씀드려도 될지 모르겠는데, 한번 여쭤봐도 될까요?',
+      '제가 직접 말씀드리기엔 좀 그런데, 그래도 한번 말씀드려볼게요.'
     ]
   };
 
@@ -407,6 +407,11 @@
   const historyEmptyMessageEl = document.getElementById('history-empty-message');
   const historyFilterEl = document.getElementById('history-filter-person');
   const historyExportButton = document.getElementById('history-export-button');
+  const historyDeleteButton = document.getElementById('history-delete-selected-button');
+  const historySelectAllWrap = document.getElementById('history-select-all-wrap');
+  const historySelectAllCheckbox = document.getElementById('history-select-all-checkbox');
+
+  const selectedHistoryIds = new Set();
 
   function loadHistory() {
     try {
@@ -466,34 +471,96 @@
 
     const filtered = filterValue === 'all' ? list : list.filter((item) => item.tag === filterValue);
 
+    // 목록에서 사라진 항목의 선택 상태는 정리
+    const validIds = new Set(list.map((item) => item.id));
+    Array.from(selectedHistoryIds).forEach((id) => {
+      if (!validIds.has(id)) selectedHistoryIds.delete(id);
+    });
+
     historyListEl.innerHTML = '';
 
     if (filtered.length === 0) {
       historyEmptyMessageEl.hidden = false;
+      historySelectAllWrap.hidden = true;
+      historyDeleteButton.disabled = true;
       return;
     }
     historyEmptyMessageEl.hidden = true;
+    historySelectAllWrap.hidden = false;
 
     filtered.forEach((item) => {
       const li = document.createElement('li');
       li.className = 'history-item';
       li.innerHTML = `
-        <div class="history-item__header">
-          <span class="history-item__tag">${item.tag}</span>
-          <span class="history-item__date">${formatDate(item.date)}</span>
+        <input type="checkbox" class="history-item__select" data-id="${item.id}" ${selectedHistoryIds.has(item.id) ? 'checked' : ''} aria-label="이 분석 기록 선택">
+        <div class="history-item__body">
+          <div class="history-item__header">
+            <span class="history-item__tag">${item.tag}</span>
+            <span class="history-item__date">${formatDate(item.date)}</span>
+          </div>
+          <p class="history-item__preview">"${item.preview}"</p>
+          <p class="history-item__result"><strong>🎯 의도</strong> ${item.intent}</p>
+          <p class="history-item__result"><strong>💗 감정</strong> ${item.emotion}</p>
+          <p class="history-item__result"><strong>🧭 목적</strong> ${item.purpose}</p>
+          <p class="history-item__confidence">신뢰도 ${item.confidence}%</p>
         </div>
-        <p class="history-item__preview">"${item.preview}"</p>
-        <p class="history-item__result"><strong>🎯 의도</strong> ${item.intent}</p>
-        <p class="history-item__result"><strong>💗 감정</strong> ${item.emotion}</p>
-        <p class="history-item__result"><strong>🧭 목적</strong> ${item.purpose}</p>
-        <p class="history-item__confidence">신뢰도 ${item.confidence}%</p>
       `;
       historyListEl.appendChild(li);
+    });
+
+    updateHistoryControlsState();
+  }
+
+  function updateHistoryControlsState() {
+    const checkboxes = Array.from(historyListEl.querySelectorAll('.history-item__select'));
+    historyDeleteButton.disabled = !checkboxes.some((cb) => cb.checked);
+    historySelectAllCheckbox.checked = checkboxes.length > 0 && checkboxes.every((cb) => cb.checked);
+  }
+
+  historyListEl.addEventListener('change', (e) => {
+    if (!e.target.classList.contains('history-item__select')) return;
+    const id = e.target.dataset.id;
+    if (e.target.checked) {
+      selectedHistoryIds.add(id);
+    } else {
+      selectedHistoryIds.delete(id);
+    }
+    updateHistoryControlsState();
+  });
+
+  if (historySelectAllCheckbox) {
+    historySelectAllCheckbox.addEventListener('change', () => {
+      const checkboxes = Array.from(historyListEl.querySelectorAll('.history-item__select'));
+      checkboxes.forEach((cb) => {
+        cb.checked = historySelectAllCheckbox.checked;
+        if (cb.checked) {
+          selectedHistoryIds.add(cb.dataset.id);
+        } else {
+          selectedHistoryIds.delete(cb.dataset.id);
+        }
+      });
+      updateHistoryControlsState();
+    });
+  }
+
+  if (historyDeleteButton) {
+    historyDeleteButton.addEventListener('click', () => {
+      if (selectedHistoryIds.size === 0) return;
+      const count = selectedHistoryIds.size;
+      if (!confirm(`선택한 ${count}개의 분석 기록을 삭제할까요?`)) return;
+
+      const remaining = loadHistory().filter((item) => !selectedHistoryIds.has(item.id));
+      persistHistory(remaining);
+      selectedHistoryIds.clear();
+      renderHistory();
     });
   }
 
   if (historyFilterEl) {
-    historyFilterEl.addEventListener('change', renderHistory);
+    historyFilterEl.addEventListener('change', () => {
+      selectedHistoryIds.clear();
+      renderHistory();
+    });
   }
 
   /* ---------- Excel(CSV) 내보내기 ---------- */
