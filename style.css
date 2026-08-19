@@ -599,8 +599,15 @@ button {
   opacity: 0.85;
 }
 
-.ask-result-list {
+.ask-result-wrap {
   margin-top: var(--space-lg);
+}
+
+.ask-result-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
 }
 
 .recommend-list li::before {

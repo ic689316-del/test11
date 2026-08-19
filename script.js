@@ -366,6 +366,7 @@
   /* ---------- 나도 숨은 의도로 물어보기 ---------- */
   const askButton = document.getElementById('ask-button');
   const askInput = document.getElementById('ask-input');
+  const askResultWrap = document.getElementById('ask-result-wrap');
   const askResultList = document.getElementById('ask-result-list');
 
   function handleAskClick() {
@@ -389,8 +390,8 @@
         li.textContent = line;
         askResultList.appendChild(li);
       });
-      askResultList.hidden = false;
-      askResultList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      askResultWrap.hidden = false;
+      askResultWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
       askButton.disabled = false;
       askButton.textContent = originalLabel;
