@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindRead - 말 속의 진심을 읽다</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= 헤더 / 내비게이션 ================= -->
+  <header id="site-header" class="site-header">
+    <div class="site-header__inner">
+      <a href="#hero-section" class="logo">🧠 MindRead</a>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <ul class="main-nav__list">
+          <li><a href="#analyzer-section" class="main-nav__link">대화 분석</a></li>
+          <li><a href="#features-section" class="main-nav__link">주요 기능</a></li>
+          <li><a href="#personas-section" class="main-nav__link">이런 분께</a></li>
+          <li><a href="#history-section" class="main-nav__link">분석 히스토리</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+
+    <!-- ================= 히어로 (서비스 소개) ================= -->
+    <section id="hero-section" class="hero-section">
+      <p class="hero-section__eyebrow">🧠 AI 대화 심리 분석 서비스</p>
+      <h1 class="hero-section__title">MindRead</h1>
+      <p class="hero-section__tagline">말 속의 진심을 읽다</p>
+      <p class="hero-section__description">
+        대화 텍스트를 입력하면 AI가 상대방의 숨은 의도·감정·목적을 즉시 분석하고
+        최적의 대처법을 제안하는 서비스입니다.
+      </p>
+      <a href="#analyzer-section" class="hero-section__cta">지금 분석하기 🔍</a>
+    </section>
+
+    <!-- ================= 문제 정의 ================= -->
+    <section id="problem-section" class="problem-section">
+      <h2 class="problem-section__title">🤔 이런 순간, 답답하지 않으셨나요?</h2>
+      <ul class="problem-list">
+        <li class="problem-list__item">상대방은 직접 말하지 않고, 돌려 말하거나 간접적으로 탐색하는 방식을 사용합니다.</li>
+        <li class="problem-list__item">받아들이는 입장에서는 그 의도를 파악하지 못해 엉뚱한 대응을 하거나, 관계가 어색해집니다.</li>
+        <li class="problem-list__item">심리 상담사에게 묻기엔 일상적인 문제이고, 지인에게 보여주기엔 대화 내용이 민감합니다.</li>
+        <li class="problem-list__item">ChatGPT 등 범용 AI는 이 목적에 특화되어 있지 않아 분석 결과가 산만하고 활용하기 어렵습니다.</li>
+      </ul>
+    </section>
+
+    <!-- ================= 타깃 사용자 페르소나 ================= -->
+    <section id="personas-section" class="personas-section">
+      <h2 class="personas-section__title">👥 이런 분들께 추천합니다</h2>
+      <ul class="persona-card-list">
+        <li class="persona-card" id="persona-jiwon" data-persona="jiwon">
+          <h3 class="persona-card__name">💼 이지원 <span class="persona-card__age">(29세)</span></h3>
+          <p class="persona-card__role">이직 후 3개월차 직장인</p>
+          <dl class="persona-card__details">
+            <dt class="persona-card__label">핵심 니즈</dt>
+            <dd class="persona-card__value">새 팀에서 상사와 동료들의 말투와 질문 의도를 빠르게 파악하고 싶다. 팀 내 분위기를 읽고 적절하게 행동하여 조기에 신뢰를 쌓고 싶다.</dd>
+            <dt class="persona-card__label">고충(Pain)</dt>
+            <dd class="persona-card__value">상사가 '요즘 팀 분위기 어때요?'라고 물을 때 탐색인지 진심 어린 관심인지 구분이 어렵다. 잘못 대응했다가 관계가 어색해질까 봐 불안하다.</dd>
+            <dt class="persona-card__label">특성</dt>
+            <dd class="persona-card__value">신중한 성격 · MBTI I형 · 분석 선호 · 관계에 예민</dd>
+          </dl>
+        </li>
+        <li class="persona-card" id="persona-minsu" data-persona="minsu">
+          <h3 class="persona-card__name">🤝 박민수 <span class="persona-card__age">(34세)</span></h3>
+          <p class="persona-card__role">영업 및 비즈니스 미팅 잦은 직장인</p>
+          <dl class="persona-card__details">
+            <dt class="persona-card__label">핵심 니즈</dt>
+            <dd class="persona-card__value">처음 만난 거래처나 파트너의 진짜 의향과 숨은 조건을 파악하고 싶다. 협상에서 상대 의도를 먼저 읽어 유리한 포지션을 잡고 싶다.</dd>
+            <dt class="persona-card__label">고충(Pain)</dt>
+            <dd class="persona-card__value">미팅에서 돌려 말하는 상대방의 진의를 파악 못해 손해를 본 경험이 있다. 지인에게 대화 내용을 보여주기가 민감해 혼자 고민하는 경우가 많다.</dd>
+            <dt class="persona-card__label">특성</dt>
+            <dd class="persona-card__value">목표 지향적 · 관계 지향 · 실용성 중시 · 빠른 의사결정 선호</dd>
+          </dl>
+        </li>
+        <li class="persona-card" id="persona-seoyeon" data-persona="seoyeon">
+          <h3 class="persona-card__name">🎉 김서연 <span class="persona-card__age">(26세)</span></h3>
+          <p class="persona-card__role">동호회·소셜 모임 활동 활발한 취준생/직장인</p>
+          <dl class="persona-card__details">
+            <dt class="persona-card__label">핵심 니즈</dt>
+            <dd class="persona-card__value">새 모임에서 처음 만난 사람이 나에게 어떤 인상을 가지고 있는지, 어떤 의도로 말을 걸어오는지 알고 싶다.</dd>
+            <dt class="persona-card__label">고충(Pain)</dt>
+            <dd class="persona-card__value">소개팅 혹은 새 모임 후 상대방의 말이 진심인지, 예의상 하는 말인지 구분이 어렵다. 잘못 판단하고 과잉반응하거나 무반응해서 기회를 놓친 경험이 있다.</dd>
+            <dt class="persona-card__label">특성</dt>
+            <dd class="persona-card__value">사교적이나 내면은 신중 · 관계 실패에 민감 · 스마트폰 앱 헤비유저</dd>
+          </dl>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= 대화 분석 도구 (핵심 기능) ================= -->
+    <section id="analyzer-section" class="analyzer-section">
+      <h2 class="analyzer-section__title">🔍 대화 속 숨은 의도, 지금 분석해보세요</h2>
+
+      <!-- 입력 영역: 상황 태그 선택 + 대화 텍스트 입력 + 분석 버튼 -->
+      <div id="analyzer-input-panel" class="analyzer-input-panel">
+        <fieldset class="situation-tag-group">
+          <legend class="situation-tag-group__label">상황 태그 선택</legend>
+          <div class="situation-tag-list">
+            <button type="button" class="situation-tag" id="tag-work" data-tag="직장·모임">직장·모임</button>
+            <button type="button" class="situation-tag" id="tag-romance" data-tag="연인·가족">연인·가족</button>
+            <button type="button" class="situation-tag" id="tag-business" data-tag="비즈니스">비즈니스</button>
+            <button type="button" class="situation-tag" id="tag-etc" data-tag="기타">기타</button>
+          </div>
+        </fieldset>
+
+        <div class="conversation-input-wrap">
+          <label for="conversation-input" class="conversation-input-label">분석할 대화 내용을 붙여넣어 주세요</label>
+          <textarea id="conversation-input" class="conversation-input" name="conversation-input" rows="8" placeholder="예) 상사: 요즘 팀 분위기 어때요?"></textarea>
+        </div>
+
+        <button type="button" id="analyze-button" class="analyze-button">⚡ 숨은 의도 분석하기</button>
+      </div>
+
+      <!-- 결과 영역: 의도/감정/목적 분석 카드 + 신뢰도 바 -->
+      <div id="analyzer-result-panel" class="analyzer-result-panel" hidden>
+        <article class="result-card" id="result-intent">
+          <h3 class="result-card__title">🎯 숨은 의도</h3>
+          <p class="result-card__value" id="result-intent-value"></p>
+        </article>
+        <article class="result-card" id="result-emotion">
+          <h3 class="result-card__title">💗 감정</h3>
+          <p class="result-card__value" id="result-emotion-value"></p>
+        </article>
+        <article class="result-card" id="result-purpose">
+          <h3 class="result-card__title">🧭 목적</h3>
+          <p class="result-card__value" id="result-purpose-value"></p>
+        </article>
+        <div class="confidence-meter" id="confidence-meter">
+          <p class="confidence-meter__label" id="confidence-meter-label">신뢰도 0%</p>
+          <div class="confidence-meter__track">
+            <div class="confidence-meter__bar" id="confidence-meter-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 대처법 추천 영역 -->
+      <div id="recommend-panel" class="recommend-panel" hidden>
+        <h3 class="recommend-panel__title">💡 추천 대처법</h3>
+        <ol class="recommend-list" id="recommend-list">
+          <!-- 대처법 액션 3가지가 JS로 채워짐 -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 핵심 기능 소개 ================= -->
+    <section id="features-section" class="features-section">
+      <h2 class="features-section__title">✨ 핵심 기능</h2>
+      <ul class="feature-card-list">
+        <li class="feature-card" id="feature-analysis">
+          <h3 class="feature-card__title">💬 대화 분석</h3>
+          <p class="feature-card__description">대화 텍스트를 입력하면 AI가 상대방의 숨은 의도·감정·목적을 분석하여 결과를 카드 형태로 출력합니다.</p>
+        </li>
+        <li class="feature-card" id="feature-recommend">
+          <h3 class="feature-card__title">🎯 대처법 추천</h3>
+          <p class="feature-card__description">분석 결과를 바탕으로 지금 상황에서 어떻게 반응·대처하면 좋을지 구체적인 액션 3가지를 추천합니다.</p>
+        </li>
+        <li class="feature-card" id="feature-tag">
+          <h3 class="feature-card__title">🏷️ 상황 태그 선택</h3>
+          <p class="feature-card__description">분석 전 상황 컨텍스트(직장·모임 / 연인·가족 / 비즈니스 / 기타)를 태그로 선택하여 분석 정확도를 높입니다.</p>
+        </li>
+        <li class="feature-card" id="feature-history">
+          <h3 class="feature-card__title">🗂️ 분석 히스토리</h3>
+          <p class="feature-card__description">과거 분석 내역을 사람별·날짜별로 저장하고, 같은 사람과의 대화 패턴 변화를 누적 추적할 수 있습니다.</p>
+        </li>
+        <li class="feature-card" id="feature-confidence">
+          <h3 class="feature-card__title">📊 신뢰도 표시</h3>
+          <p class="feature-card__description">AI 분석의 확신도(%)를 시각적 바 형태로 함께 제공하여 결과의 신뢰 수준을 알 수 있습니다.</p>
+        </li>
+        <li class="feature-card" id="feature-export">
+          <h3 class="feature-card__title">📥 Excel 내보내기</h3>
+          <p class="feature-card__description">히스토리의 분석 결과를 Excel 파일로 다운로드하여 외부에서 활용하거나 보관할 수 있습니다.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= 분석 히스토리 ================= -->
+    <section id="history-section" class="history-section">
+      <h2 class="history-section__title">🗂️ 분석 히스토리</h2>
+
+      <div class="history-toolbar">
+        <label for="history-filter-person" class="history-toolbar__label">인물별 보기</label>
+        <select id="history-filter-person" class="history-filter">
+          <option value="all">전체 보기</option>
+        </select>
+        <button type="button" id="history-export-button" class="history-export-button">📥 Excel로 내보내기</button>
+      </div>
+
+      <ul class="history-list" id="history-list">
+        <!-- 저장된 분석 기록이 JS로 채워짐 -->
+      </ul>
+
+      <p class="history-empty-message" id="history-empty-message" hidden>
+        아직 저장된 분석 기록이 없습니다.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ================= 푸터 ================= -->
+  <footer id="site-footer" class="site-footer">
+    <p class="site-footer__brand">🧠 MindRead — 말 속의 진심을 읽다</p>
+    <p class="site-footer__security">입력하신 대화 내용은 서버에 저장되지 않으며, 분석 후 즉시 파기됩니다.</p>
+    <p class="site-footer__tech">HTML5 · CSS3 · JavaScript · Claude API · Vercel</p>
+    <p class="site-footer__copyright">&copy; 2026 MindRead</p>
+  </footer>
+
+</body>
+</html>
