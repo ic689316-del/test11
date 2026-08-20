@@ -58,6 +58,11 @@
   box-sizing: border-box;
 }
 
+/* hidden 속성을 쓰는 요소는 display:flex/grid 같은 클래스 규칙보다 항상 우선해서 진짜로 안 보여야 한다. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -402,6 +407,98 @@ button {
 .conversation-input:focus-visible {
   outline: none;
   border-color: var(--text-standard);
+}
+
+.image-upload-wrap {
+  margin-bottom: var(--space-lg);
+}
+
+.image-upload-input {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: var(--space-sm) 0;
+}
+
+.image-upload-input::file-selector-button {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+  margin-right: var(--space-md);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.image-upload-input::file-selector-button:hover {
+  border-color: var(--color-primary);
+}
+
+/* 구형 Safari/Chrome용 웹킷 접두사 버전 (별도 규칙으로 분리해야 무효화되지 않음) */
+.image-upload-input::-webkit-file-upload-button {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+  margin-right: var(--space-md);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.image-upload-input::-webkit-file-upload-button:hover {
+  border-color: var(--color-primary);
+}
+
+.image-preview-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--color-canvas);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.image-preview {
+  max-width: 96px;
+  max-height: 96px;
+  border-radius: var(--radius-sm, 6px);
+  object-fit: cover;
+}
+
+.image-remove-button {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  min-height: 32px;
+}
+
+.image-remove-button:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.image-ocr-status {
+  margin-top: var(--space-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.image-ocr-status.is-error {
+  color: var(--color-error);
 }
 
 .analyze-button {
